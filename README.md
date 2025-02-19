@@ -139,7 +139,11 @@ unsigned hash(char *s) {
  ### 🔹 Why Use 31 and 101?
 - ``31`` is a prime number, which helps distribute hash values evenly across different inputs.
 - Multiplication by 31 allows an efficient bitwise operation ((hashval << 5) - hashval), making it computationally cheaper in low-level programming.
-- ``101`` is a prime modulus, preventing clustering and ensuring a more uniform hash distribution.  TODO: ADDED SOURCES/ CITATION IF I CAN
+- ``101`` is a prime modulus, preventing clustering and ensuring a more uniform hash distribution.  
+
+📌 **Sources:**
+ - [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)
+
 
 ### **🔹 Comparison of Work**   
 | Approach        | Description                                      | Pros                               | Cons                             |
@@ -204,6 +208,10 @@ Final Step:  `99162353 % 101 = 17`
 📄 https://stackoverflow.com/questions/1145217/why-use-a-prime-number-in-hash-functions
 
 6. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**
-📄 https://en.wikipedia.org/wiki/The_C_Programming_Language
+📄 https://en.wikipedia.org/wiki/The_C_Programming_Language  
+
+7. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  
+   📄 [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)
+
 
 ---
