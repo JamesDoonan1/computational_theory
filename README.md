@@ -226,7 +226,7 @@ Sha-256 padding consists of 3 main steps:
 | Approach | Description | Pros | Cons |
 |----------|------------|------|------|
 | **Manual Padding (Used Here)** | Follows NIST FIPS 180-4 specification step-by-step. | Exact, predictable, secure. | More complex implementation. |
-| **Python's `hashlib`** | Uses built-in SHA-256 function, including padding. | Fast and optimized. | No manual control over padding. |
+| **Python's `hashlib`** | Uses built-in SHA-256 function, including padding. | Fast and optimised. | No manual control over padding. |
 | **Bit Manipulation (Bitwise Ops)** | Uses bitwise shifting instead of `struct.pack()`. | Low-level efficiency. | More difficult to implement. |
 
 ✅ **Conclusion:** The **manual padding approach** provides **full control** over the padding process and is **essential for understanding SHA-256 internals**.
@@ -267,7 +267,13 @@ To verify correctness, I computed **SHA-256 padding manually** and confirmed tha
 📄 https://en.wikipedia.org/wiki/The_C_Programming_Language  
 
 7. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  📄
-   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)
+   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)  
+8. **NIST FIPS 180-4: Secure Hash Standard (SHA)**  
+   [https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)  
+9. **Python `struct` Module Documentation**  
+   [https://docs.python.org/3/library/struct.html](https://docs.python.org/3/library/struct.html)  
+10. **SHA256 Padding Explanation (Wikipedia)**  
+   [https://en.wikipedia.org/wiki/SHA-2#Pseudocode](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) 
 
 
 ---
