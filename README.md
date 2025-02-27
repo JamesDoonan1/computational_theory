@@ -95,7 +95,7 @@ CH(x, y, z)          # Verified with sample binary values
 MAJ(x, y, z)         # Verified with sample binary values  
 ```  
 
-## 📌 Final Thoughts
+✅ **Final Thoughts:**
 - **The functions were implemented and tested successfully.**
 - **Bitwise masking ensures correct wrapping and bit preservation.**
 - **The functions align with cryptographic applications (e.g., SHA-256).**
@@ -183,14 +183,13 @@ Final Step:  `99162353 % 101 = 17`
 | `"theory"`        | `77`              | `77`           | ✅ Correct  | Matches expected output.        |
 | `"openai"`        | `35`              | `35`           | ✅ Correct  | Matches expected output.        |
 
-### Final Thoughts  
-
+✅ **Final Thoughts:**  
  - The K&R hash function was successfully converted from C to Python.
  - Correctness was validated through manual computation and automated tests.
  - The choice of 31 and 101 ensures efficient, evenly distributed hashes.
  - The function is not cryptographically secure, but is highly efficient for basic string hashing.  
 
- # 🛠 Task 3: SHA-256 Padding
+ # 🛠 Task 3: SHA256 Padding
 
 ## 📌 Research  
 
@@ -229,7 +228,8 @@ Sha-256 padding consists of 3 main steps:
 | **Python's `hashlib`** | Uses built-in SHA-256 function, including padding. | Fast and optimised. | No manual control over padding. |
 | **Bit Manipulation (Bitwise Ops)** | Uses bitwise shifting instead of `struct.pack()`. | Low-level efficiency. | More difficult to implement. |
 
-✅ **Conclusion:** The **manual padding approach** provides **full control** over the padding process and is **essential for understanding SHA-256 internals**.
+✅ **Final Thoughts:**   
+The **manual padding approach** provides **full control** over the padding process and is **essential for understanding SHA-256 internals**.
 
 --- 
 
