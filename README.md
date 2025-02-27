@@ -210,8 +210,8 @@ Final Step:  `99162353 % 101 = 17`
 6. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**
 📄 https://en.wikipedia.org/wiki/The_C_Programming_Language  
 
-7. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  
-   📄 [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)
+7. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  📄
+   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)
 
 
 ---
