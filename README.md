@@ -246,6 +246,66 @@ To verify correctness, I computed **SHA-256 padding manually** and confirmed tha
 | **Append Original Length (24 bits)** | `00000000 00000000 00000000 00000000 00000000 00000000 00000000 00011000` | `0x18` |
 
 
+# 🛠 Task 4: Prime Numbers  
+
+## 📌 Problem Statement
+Calculate the first 100 prime numbers using two different algorithms. Explain how the algorithms work and compare their performance.
+
+## 📌 Research  
+
+### 🔹   Miller-Rabin Primality Test vs. Trial Division (√n) – Brief Explanation  
+- The **Miller-Rabin primality test** is a probabilistic algorithm. It's method uses modular exponentiation and Fermat’s Little Theorem to test if a number behaves like a prime. it's efficiency is much faster for large numbers. It's used in cryptography(e.g RSA key generation). It's accuracy is not 100% guaranteed, but highly reliable with multiple tests.  
+- The **Trial Division with Square Root Optimisation** is a deterministic algorithm. It's method checks divisibility only up to √n since a composite number must have a factor ≤ √n. It's efficiency is slower for larger numbers, nut **always** correct.  
+
+| Method | Type | Time Complexity | Best For | Guaranteed Accuracy? |
+|------|------------|------------|------------|------------|
+| **1. Miller-Rabin** | Probabilistic | O(k log³ n) | Large prime testing (cryptography) |❌ (Highly reliable) | 
+| **2. Trial Division** | Deterministic | O(√n) | Small numbers (≤ 10⁹) | 	✅ (Always correct) | 
+
+
+📌 **Sources:**
+- 📄 [NIST Secure Hash Standard (FIPS 180-4)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)
+- 📄 [SHA-256 Explained (Cryptography StackExchange)](https://crypto.stackexchange.com/questions/48636/sha-256-padding-explanation)
+
+---
+
+## 📜 Comparison of Work
+
+### ** Alternative Approaches**  
+
+| **Approach** | **Description** | **Pros** | **Cons** |  
+|-------------|---------------|---------|---------|   
+| **Fermat’s Primality Test** | Uses Fermat’s theorem to check prime properties. | Faster than trial division. | Fails for Carmichael numbers (false positives). |  
+| **AKS Primality Test** | A deterministic, polynomial-time algorithm (`O(log^6 n)`). | Always correct, no false positives. | Extremely slow compared to probabilistic tests. |  
+| **Sieve of Eratosthenes** | Generates all primes up to `n` by marking multiples. | Very fast for finding many primes. | High memory usage for large `n`. |  
+| **Sieve of Atkin** | A faster sieve than Eratosthenes, based on quadratic residues. | More efficient for large numbers. | More complex to implement. |  
+| **Elliptic Curve Primality Proving (ECPP)** | Uses elliptic curves to verify primality. | One of the fastest deterministic methods. | Very advanced and complex. |  
+
+--- 
+
+## 📊 Testing and Validation
+### **📝 Test Cases**  
+
+| **Algorithm**               | **Input**   | **Expected Output**    | **Actual Output**     | **Status**      |  
+|-----------------------------|------------|-----------------------|-----------------------|----------------|  
+| **Miller-Rabin**            | `n = 100`  | First 100 primes      | First 100 primes      | ✅ Correct     |  
+| **Square Root Optimization** | `n = 100`  | First 100 primes      | First 100 primes      | ✅ Correct     |  
+
+
+```
+First 100 prime numbers:
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541]
+
+```  
+
+
+✅ **Final Thoughts:**   
+The **Miller-Rabin** is typically used for **large number primality testing** due to its probabilistic nature. However, in this case, I chose to use it out of **curiosity** and as a challenge to see if I could implement it successfully for generating the first 100 primes.  
+
+Despite not being the most common choice for sequential prime generation, my implementation produced the correct results, demonstrating that Miller-Rabin can work effectively in this scenario when used with deterministic bases.  
+
+**Trial Division with √n Optimisation** is a simple, reliable, and deterministic method for checking primality. While not the fastest for large numbers, it is **highly accurate** and efficient for **small prime lists** like the first 100 primes.
+
 
 ## 📚 References
 1. **NIST FIPS 180-4: Secure Hash Standard (SHA)**  
@@ -274,6 +334,11 @@ To verify correctness, I computed **SHA-256 padding manually** and confirmed tha
    [https://docs.python.org/3/library/struct.html](https://docs.python.org/3/library/struct.html)  
 10. **SHA256 Padding Explanation (Wikipedia)**  
    [https://en.wikipedia.org/wiki/SHA-2#Pseudocode](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) 
+11. **Miller-Rabin Primality Test:**  
+   - [Wikipedia: Miller-Rabin Primality Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)  
+12. **Square Root Optimization:**  
+- [Wikipedia: Trial Division](https://en.wikipedia.org/wiki/Trial_division)  
+- [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/) 
 
 
 ---
