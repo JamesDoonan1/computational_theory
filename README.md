@@ -188,7 +188,63 @@ Final Step:  `99162353 % 101 = 17`
  - The K&R hash function was successfully converted from C to Python.
  - Correctness was validated through manual computation and automated tests.
  - The choice of 31 and 101 ensures efficient, evenly distributed hashes.
- - The function is not cryptographically secure, but is highly efficient for basic string hashing.
+ - The function is not cryptographically secure, but is highly efficient for basic string hashing.  
+
+ # 🛠 Task 3: SHA-256 Padding
+
+## 📌 Research  
+
+### 🔹 What is SHA-256 Padding?  
+SHA-256 is a **cryptographic hash function** that processes input data in **512-bit blocks**. If the input message is not already a multiple of 512 buts, **padding is added** to ensure the final message fits the required block size.  
+
+Sha-256 padding consists of 3 main steps:  
+1. **Append a `1 bit`** (0x80 in hex).
+2. **Pad with `0` bits** until the length is congruent to **448 mod 512**.
+3. **Append the original message length** as a **64-bit big-endian integer**.  
+
+### 🔹 Why is Padding Required?  
+- **Maintains Data Integrity**: Ensures every input is processed consistently.
+- **Prepares Message for Hashing**: Allows SHA-256 to operate on **fixed-size blocks**.
+- **Prevents Length Extension Attacks**: Ensures the original message is **unambiguously** recoverable.
+
+### 🔹 SHA-256 Padding Breakdown
+| Step | Description |
+|------|------------|
+| **1. Append `1` Bit** | A `1` bit (`0x80` in hex) is added at the end of the message. |
+| **2. Add `0` Bits** | The message is padded with zeros until its length is **448 mod 512**. |
+| **3. Append Length** | The original message length (in bits) is added as a **64-bit big-endian integer**. |
+
+📌 **Sources:**
+- 📄 [NIST Secure Hash Standard (FIPS 180-4)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)
+- 📄 [SHA-256 Explained (Cryptography StackExchange)](https://crypto.stackexchange.com/questions/48636/sha-256-padding-explanation)
+
+---
+
+## 📜 Comparison of Work
+
+### **1️⃣ Alternative Approaches**
+| Approach | Description | Pros | Cons |
+|----------|------------|------|------|
+| **Manual Padding (Used Here)** | Follows NIST FIPS 180-4 specification step-by-step. | Exact, predictable, secure. | More complex implementation. |
+| **Python's `hashlib`** | Uses built-in SHA-256 function, including padding. | Fast and optimized. | No manual control over padding. |
+| **Bit Manipulation (Bitwise Ops)** | Uses bitwise shifting instead of `struct.pack()`. | Low-level efficiency. | More difficult to implement. |
+
+✅ **Conclusion:** The **manual padding approach** provides **full control** over the padding process and is **essential for understanding SHA-256 internals**.
+
+--- 
+
+## 📊 Testing and Validation
+
+To verify correctness, I computed **SHA-256 padding manually** and confirmed that the Python function produced the expected output.
+
+### **🔢 Example: Step-by-Step Calculation for `"abc"`**
+| Step | Binary Representation | Hexadecimal |
+|------|-----------------------|-------------|
+| **Original Message** (`abc`) | `01100001 01100010 01100011` | `0x616263` |
+| **After Appending `1` Bit** | `01100001 01100010 01100011 10000000` | `0x61626380` |
+| **Padding `0` Bits** (until `448 mod 512`) | `...00000000...` (padded to 448 bits) | `...0000` |
+| **Append Original Length (24 bits)** | `00000000 00000000 00000000 00000000 00000000 00000000 00000000 00011000` | `0x18` |
+
 
 
 ## 📚 References
