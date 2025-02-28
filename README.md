@@ -23,10 +23,13 @@
 This repository contains my submission for the **Computational Theory (2024/2025)** assessment. The project covers **eight major tasks** related to computational theory, including **bitwise operations, hash functions, cryptographic padding, prime number algorithms, Turing machines, and computational complexity analysis.** 
 
 Each task follows a **structured approach**, including:
+- 📌 **Problem Statement**  
 - 📌 **Research & Explanation**
-- 📝 **Implementation**
+- 📜 **Implementation**
+-  📝 **Alternative Approaches**
 - 🔎 **Testing & Validation**
-- 📊 **Performance Analysis**
+- 📊 **Final Thoughts**
+
 
 **Final Submission Deadline:** 🗓 **May 4, 2025**
 
@@ -131,7 +134,8 @@ unsigned hash(char *s) {
 
 ```  
 
-#### 🔹 This function  
+
+#### 🔹 This function Implementation
  - Iterates through each character in the string.  
  - **Multiplies the previous hash by 31** and adds the ASCII value of the character.  
  - **Performs modulo 101** to keep values within a small range.  
@@ -206,7 +210,7 @@ Sha-256 padding consists of 3 main steps:
 - **Prepares Message for Hashing**: Allows SHA-256 to operate on **fixed-size blocks**.
 - **Prevents Length Extension Attacks**: Ensures the original message is **unambiguously** recoverable.
 
-### 🔹 SHA-256 Padding Breakdown
+### 🔹 SHA-256 Padding Implementation
 | Step | Description |
 |------|------------|
 | **1. Append `1` Bit** | A `1` bit (`0x80` in hex) is added at the end of the message. |
@@ -221,7 +225,7 @@ Sha-256 padding consists of 3 main steps:
 
 ## 📜 Comparison of Work
 
-### **1️⃣ Alternative Approaches**
+###  Alternative Approaches
 | Approach | Description | Pros | Cons |
 |----------|------------|------|------|
 | **Manual Padding (Used Here)** | Follows NIST FIPS 180-4 specification step-by-step. | Exact, predictable, secure. | More complex implementation. |
@@ -253,9 +257,11 @@ Calculate the first 100 prime numbers using two different algorithms. Explain ho
 
 ## 📌 Research  
 
-### 🔹   Miller-Rabin Primality Test vs. Trial Division (√n) – Brief Explanation  
+### 🔹   Miller-Rabin Primality Test vs. with Square Root Optimisation – Brief Explanation  
 - The **Miller-Rabin primality test** is a probabilistic algorithm. It's method uses modular exponentiation and Fermat’s Little Theorem to test if a number behaves like a prime. it's efficiency is much faster for large numbers. It's used in cryptography(e.g RSA key generation). It's accuracy is not 100% guaranteed, but highly reliable with multiple tests.  
-- The **Trial Division with Square Root Optimisation** is a deterministic algorithm. It's method checks divisibility only up to √n since a composite number must have a factor ≤ √n. It's efficiency is slower for larger numbers, nut **always** correct.  
+- The **Trial Division with Square Root Optimisation** is a deterministic algorithm. It's method checks divisibility only up to √n since a composite number must have a factor ≤ √n. It's efficiency is slower for larger numbers, nut **always** correct.    
+
+### 🔹  Implementation
 
 | Method | Type | Time Complexity | Best For | Guaranteed Accuracy? |
 |------|------------|------------|------------|------------|
