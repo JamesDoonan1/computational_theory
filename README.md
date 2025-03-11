@@ -398,7 +398,70 @@ The function correctly computes **the first 32 bits of the fractional part of sq
 
 ---
 
+# 🛠 Task 6: Proof of Work  
 
+## 📌 Problem Statement  
+This task involves **finding English words whose SHA-256 hash digests contain the highest number of leading `0` bits**.  
+
+The challenge is similar to **Proof-of-Work (PoW) mechanisms** used in **blockchain mining**, where miners compete to find a hash value with a certain number of leading zeros. However, rather than generating hashes by brute force, we are analyzing **real English words** to find those that naturally produce hashes with the most leading zeros.  
+
+## 📌 Research & Explanation  
+### 🔹 What is Proof of Work?  
+Proof of Work (PoW) is a **computational puzzle** that requires significant effort to solve but is easy to verify. It is widely used in **cryptocurrencies like Bitcoin** to ensure network security and prevent spam.  
+- Miners repeatedly hash data to **find a hash with a specified number of leading `0` bits**.
+- The first miner to achieve this wins the right to add a new block to the blockchain.  
+
+In this task, instead of mining, we **search through an English dictionary** to find words that naturally **generate hashes with many leading zero bits**.  
+
+### 🔹 Why SHA-256?  
+SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function used in **digital signatures, password hashing, and blockchain security**. It generates a **fixed 256-bit output**, making it ideal for secure hashing.  
+- **Unpredictability:** Small input changes cause entirely different hash outputs.  
+- **Collision Resistance:** Finding two different inputs with the same SHA-256 hash is computationally infeasible.  
+
+## 📜 Implementation  
+### ✅ Steps to Implement the Task  
+1. **Retrieve a list of English words** using the `nltk.words()` corpus.  
+2. **Compute the SHA-256 hash** for each word.  
+3. **Convert the hash to a binary string** and count **leading `0` bits**.  
+4. **Identify words with the most leading `0` bits**.  
+5. **Verify that these words exist in an English dictionary**.  
+6. **Print the results, including the word, number of leading `0` bits, and hash value**.  
+
+## 📝 Alternative Approaches  
+
+| Approach | Description | Pros | Cons |
+|----------|------------|------|------|
+| **Brute Force Approach** | Randomly generates words to find optimal hashes. | Finds ideal words. | Extremely slow, computationally expensive. |
+| **Using NLTK Word List (Used Here)** | Searches through an actual dictionary dataset. | Faster, works with real words. | May miss non-dictionary words with better hashes. |
+| **Custom Word List** | Uses a predefined list of common words. | More control over word selection. | Limited dataset, may not find optimal hashes. |
+
+✅ **Conclusion:** Using the **NLTK English dictionary** ensures **efficiency** while keeping the results meaningful.  
+
+## 🔎 Testing & Validation  
+### ✅ Expected Output Format  
+
+| **Word**       | **Leading Zero Bits** | **SHA-256 Hash (First 16 Characters)** |
+|---------------|---------------------|----------------------------------|
+| `guilefulness` | 16 | `0000d79e1c6964e6...` |
+| `mismatchment` | 16 | `0000bb6ede9f29a0...` |
+
+### ✅ Dictionary Validation  
+To confirm these words are **real English words**, we check against the **NLTK word corpus**:
+
+```plaintext
+Word: guilefulness, Exists in Dictionary: True
+Word: mismatchment, Exists in Dictionary: True
+Word: nonexistentword, Exists in Dictionary: False  
+```
+
+## 📌 Final Thoughts  
+
+-   The function successfullly identified English words with the highest number of leading zero bits in their SHA-256 hashes.  
+-  **Dictionary validation** ensures that we are using **real words rather than random letter sequences**.  
+-  This method could be extended to search for words with even more leading zeros by using a larger dataset or even A_-generated words.
+
+
+---
 
 
 ## 📚 References
@@ -432,7 +495,19 @@ The function correctly computes **the first 32 bits of the fractional part of sq
    📄 [https://crypto.stackexchange.com/questions/19325](https://crypto.stackexchange.com/questions/19325)  
 
 12. **GeeksforGeeks - SHA-256 Algorithm**  
-   📄 [https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/](https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/) 
+   📄 [https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/](https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/)   
+
+13. **Bitcoin Whitepaper – Proof of Work in Blockchain**  
+   📄 [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)  
+   - Describes **how Proof of Work (PoW) is used in Bitcoin mining** to secure the blockchain.  
+
+14. **Cryptographic Hash Functions – Khan Academy**  
+   📄 [https://www.khanacademy.org/computing/computer-science/cryptography](https://www.khanacademy.org/computing/computer-science/cryptography)  
+   - Educational resource explaining **SHA-256 and hashing functions**.  
+15. **How Proof of Work Secures Cryptocurrencies – IBM Developer**  
+   📄 [https://developer.ibm.com/articles/what-is-proof-of-work/](https://developer.ibm.com/articles/what-is-proof-of-work/)  
+   - Explains **how Proof of Work is used in cryptocurrencies** and its **importance in security**.  
+
 
 
 ---
