@@ -310,7 +310,95 @@ The **Miller-Rabin** is typically used for **large number primality testing** du
 
 Despite not being the most common choice for sequential prime generation, my implementation produced the correct results, demonstrating that Miller-Rabin can work effectively in this scenario when used with deterministic bases.  
 
-**Trial Division with √n Optimisation** is a simple, reliable, and deterministic method for checking primality. While not the fastest for large numbers, it is **highly accurate** and efficient for **small prime lists** like the first 100 primes.
+**Trial Division with √n Optimisation** is a simple, reliable, and deterministic method for checking primality. While not the fastest for large numbers, it is **highly accurate** and efficient for **small prime lists** like the first 100 primes.  
+
+---   
+
+# 🛠 Task 5: Roots  
+
+## 🔹 Square Roots in Cryptography  
+
+In cryptographic hash functions such as **SHA-256**, **initialization constants** are derived from the **fractional parts of the square roots** of the **first 8 prime numbers**. These values introduce non-linearity, which enhances **security and randomness** in hashing.
+
+This task extends that concept by computing **the first 32 bits of the fractional part of the square roots of the first 100 prime numbers**.
+
+### ✅ Problem Statement  
+Write a Python function that:
+1. **Uses the `first_n_primes(n)` function from Task 4** to get the first 100 prime numbers.  
+2. **Computes the square root of each prime number**.  
+3. **Extracts the fractional part** (i.e., the part after the decimal point).  
+4. **Multiplies it by `2³²` (4294967296) and converts it to a 32-bit integer**.  
+5. **Prints the values in hexadecimal format** for better readability.  
+
+### 🔹 Why is This Important?  
+- **Used in SHA-256 Constants** – The first **8 computed values** match the **SHA-256 initial hash values**.  
+- **Ensures Non-Linearity** – These constants are difficult to predict, making the hash function more resistant to attacks.  
+- **Used in Cryptographic Randomness** – Similar techniques are applied in other secure cryptographic schemes.  
+
+---
+
+## 📜 Comparison of Work  
+
+| Approach | Description | Pros | Cons |
+|----------|------------|------|------|
+| **Manual Prime Computation** | Calculates primes within this task. | Independent, self-contained. | Redundant, less optimized. |
+| **Reusing `first_n_primes(n)` (Used Here)** | Uses the optimized function from Task 4. | Efficient, avoids duplicate code. | Requires importing from Task 4. |
+| **Precomputed Prime List** | Stores a hardcoded list of primes. | Fastest execution. | No flexibility, storage overhead. |
+
+✅ **Conclusion:** **Reusing Task 4’s function** is the **best approach** as it **avoids redundancy while maintaining efficiency**.
+
+---
+
+## 🔬 Justification for Approach  
+
+- **Reuses the efficient prime-finding function from Task 4**, avoiding unnecessary recomputation.  
+- **Floating-point precision is sufficient** for extracting the first 32 bits.  
+- **Multiplication by `2³²` (4294967296) ensures correct bit representation**.  
+
+---
+
+## 📊 Testing and Validation  
+
+The function correctly computes **the first 32 bits of the fractional part of square roots** of the **first 100 primes**.  
+
+| **Prime** | **Square Root** | **Fractional Part** | **Fractional Bits (Hex)** |
+|----------|--------------|------------------|---------------------------|
+| 2        | 1.4142135   | 0.4142135        | `6a09e667` |
+| 3        | 1.7320508   | 0.7320508        | `bb67ae85` |
+| 5        | 2.2360679   | 0.2360679        | `3c6ef372` |
+| 7        | 2.6457513   | 0.6457513        | `a54ff53a` |
+| 11       | 3.3166247   | 0.3166247        | `510e527f` |
+| 13       | 3.6055512   | 0.6055512        | `9b05688c` |
+| 17       | 4.1231056   | 0.1231056        | `1f83d9ab` |
+| 19       | 4.3588989   | 0.3588989        | `5be0cd19` |
+| 23       | 4.7958315   | 0.7958315        | `cbbb9d5d` |
+| 29       | 5.3851648   | 0.3851648        | `629a292a` |
+| 31       | 5.5677643   | 0.5677643        | `9159015a` |
+| 37       | 6.0827625   | 0.0827625        | `152fecd8` |
+| 41       | 6.4031242   | 0.4031242        | `67332667` |
+| 43       | 6.5574385   | 0.5574385        | `8eb44a87` |
+| 47       | 6.8556546   | 0.8556546        | `db0c2e0d` |
+| 53       | 7.2801098   | 0.2801098        | `47b5481d` |
+| 59       | 7.6811457   | 0.6811457        | `ae5f9156` |
+| 61       | 7.8102496   | 0.8102496        | `cf6c85d3` |
+| 67       | 8.1853528   | 0.1853528        | `2f73477d` |
+| 71       | 8.4261498   | 0.4261498        | `6d1826ca` |
+| ...      | ...         | ...              | ... |
+
+✅ **The computed values match the expected SHA-256 constants!** 🎯  
+
+---
+
+## 📌 Final Thoughts  
+
+- The function successfully computed **the first 32 bits of the fractional part** of **square roots of the first 100 primes**.  
+- The results **match the SHA-256 initial hash values**, confirming correctness.  
+- **Reusing Task 4's function** made the implementation more **efficient and modular**.  
+- This approach can be **extended** to compute **cube roots for SHA-512 constants**.  
+
+---
+
+
 
 
 ## 📚 References
@@ -323,28 +411,28 @@ Despite not being the most common choice for sequential prime generation, my imp
 3. **Understanding Binary Arithmetic (MIT OpenCourseWare)**  
    [https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/)
 
-4. **Java's hashCode() and Why 31 is Used**
-📄 https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#hashCode--
-
-5. **Prime Numbers in Hash Functions (Stack Overflow Discussion)**
+4. **Prime Numbers in Hash Functions (Stack Overflow Discussion)**
 📄 https://stackoverflow.com/questions/1145217/why-use-a-prime-number-in-hash-functions
 
-6. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**
+5. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**
 📄 https://en.wikipedia.org/wiki/The_C_Programming_Language  
 
-7. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  📄
-   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)  
-8. **NIST FIPS 180-4: Secure Hash Standard (SHA)**  
-   [https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)  
-9. **Python `struct` Module Documentation**  
+6. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  📄
+   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)   
+7. **Python `struct` Module Documentation**  
    [https://docs.python.org/3/library/struct.html](https://docs.python.org/3/library/struct.html)  
-10. **SHA256 Padding Explanation (Wikipedia)**  
+8. **SHA256 Padding Explanation (Wikipedia)**  
    [https://en.wikipedia.org/wiki/SHA-2#Pseudocode](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) 
-11. **Miller-Rabin Primality Test:**  
+9. **Miller-Rabin Primality Test:**  
    - [Wikipedia: Miller-Rabin Primality Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)  
-12. **Square Root Optimization:**  
+10. **Square Root Optimization:**  
 - [Wikipedia: Trial Division](https://en.wikipedia.org/wiki/Trial_division)  
-- [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/) 
+- [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)   
+11. **SHA-256 Initial Constants Explanation**  
+   📄 [https://crypto.stackexchange.com/questions/19325](https://crypto.stackexchange.com/questions/19325)  
+
+12. **GeeksforGeeks - SHA-256 Algorithm**  
+   📄 [https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/](https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/) 
 
 
 ---
