@@ -403,7 +403,7 @@ The function correctly computes **the first 32 bits of the fractional part of sq
 ## 📌 Problem Statement  
 This task involves **finding English words whose SHA-256 hash digests contain the highest number of leading `0` bits**.  
 
-The challenge is similar to **Proof-of-Work (PoW) mechanisms** used in **blockchain mining**, where miners compete to find a hash value with a certain number of leading zeros. However, rather than generating hashes by brute force, we are analyzing **real English words** to find those that naturally produce hashes with the most leading zeros.  
+The challenge is similar to **Proof-of-Work (PoW) mechanisms** used in **blockchain mining**, where miners compete to find a hash value with a certain number of leading zeros. However, rather than generating hashes by brute force, I am analyzing **real English words** to find those that naturally produce hashes with the most leading zeros.  
 
 ## 📌 Research & Explanation  
 ### 🔹 What is Proof of Work?  
@@ -411,7 +411,7 @@ Proof of Work (PoW) is a **computational puzzle** that requires significant effo
 - Miners repeatedly hash data to **find a hash with a specified number of leading `0` bits**.
 - The first miner to achieve this wins the right to add a new block to the blockchain.  
 
-In this task, instead of mining, we **search through an English dictionary** to find words that naturally **generate hashes with many leading zero bits**.  
+In this task, instead of mining, I **searched through an English dictionary** to find words that naturally **generate hashes with many leading zero bits**.  
 
 ### 🔹 Why SHA-256?  
 SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function used in **digital signatures, password hashing, and blockchain security**. It generates a **fixed 256-bit output**, making it ideal for secure hashing.  
@@ -446,7 +446,7 @@ SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function used in
 | `mismatchment` | 16 | `0000bb6ede9f29a0...` |
 
 ### ✅ Dictionary Validation  
-To confirm these words are **real English words**, we check against the **NLTK word corpus**:
+To confirm these words are **real English words**, I check against the **NLTK word corpus**:
 
 ```plaintext
 Word: guilefulness, Exists in Dictionary: True
@@ -457,57 +457,89 @@ Word: nonexistentword, Exists in Dictionary: False
 ## 📌 Final Thoughts  
 
 -   The function successfullly identified English words with the highest number of leading zero bits in their SHA-256 hashes.  
--  **Dictionary validation** ensures that we are using **real words rather than random letter sequences**.  
+-  **Dictionary validation** ensures that I'm using **real words rather than random letter sequences**.  
 -  This method could be extended to search for words with even more leading zeros by using a larger dataset or even A_-generated words.
 
 
 ---
 
+# 📚 References  
 
-## 📚 References
-1. **NIST FIPS 180-4: Secure Hash Standard (SHA)**  
-   [https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)
+### **🔹 Cryptographic Standards & Documentation**
+1. **NIST FIPS 180-4: Secure Hash Standard (SHA-256)**  
+   📄 [NIST FIPS 180-4](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)  
+   - Official specification for SHA-256, defining the hashing algorithm and padding scheme.  
 
-2. **Efficient Bitwise Computations (Intel Developer Zone)**  
-   [https://software.intel.com/en-us/articles/fast-bitwise-operations](https://software.intel.com/en-us/articles/fast-bitwise-operations)
+2. **Python `struct` Module Documentation**  
+   📄 [Python Docs – `struct`](https://docs.python.org/3/library/struct.html)  
+   - Explains how to pack/unpack binary data, used for SHA-256 padding.  
 
-3. **Understanding Binary Arithmetic (MIT OpenCourseWare)**  
-   [https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/)
+3. **SHA-256 Padding Explanation (Wikipedia)**  
+   📄 [Wikipedia – SHA-2 Pseudocode](https://en.wikipedia.org/wiki/SHA-2#Pseudocode)  
+   - Provides pseudocode and a detailed breakdown of the SHA-256 algorithm.  
 
-4. **Prime Numbers in Hash Functions (Stack Overflow Discussion)**
-📄 https://stackoverflow.com/questions/1145217/why-use-a-prime-number-in-hash-functions
+---
 
-5. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**
-📄 https://en.wikipedia.org/wiki/The_C_Programming_Language  
+### **🔹 Computational Theory & Optimization**
+4. **Efficient Bitwise Computations (Intel Developer Zone)**  
+   📄 [Intel – Fast Bitwise Operations](https://software.intel.com/en-us/articles/fast-bitwise-operations)  
+   - Discusses performance-optimized bitwise operations.  
 
-6. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  📄
-   [https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)   
-7. **Python `struct` Module Documentation**  
-   [https://docs.python.org/3/library/struct.html](https://docs.python.org/3/library/struct.html)  
-8. **SHA256 Padding Explanation (Wikipedia)**  
-   [https://en.wikipedia.org/wiki/SHA-2#Pseudocode](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) 
-9. **Miller-Rabin Primality Test:**  
-   - [Wikipedia: Miller-Rabin Primality Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)  
-10. **Square Root Optimization:**  
-- [Wikipedia: Trial Division](https://en.wikipedia.org/wiki/Trial_division)  
-- [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)   
+5. **Understanding Binary Arithmetic (MIT OpenCourseWare)**  
+   📄 [MIT OpenCourseWare](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/)  
+   - Covers essential binary arithmetic concepts used in computational theory.  
+
+6. **Prime Numbers in Hash Functions (Stack Overflow Discussion)**  
+   📄 [Stack Overflow – Prime Numbers in Hashing](https://stackoverflow.com/questions/1145217/why-use-a-prime-number-in-hash-functions)  
+   - Explains why prime numbers are commonly used in hash functions and cryptography.  
+
+7. **Miller-Rabin Primality Test:**  
+   - 📄 [Wikipedia – Miller-Rabin Primality Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)  
+   - 📄 [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)  
+
+8. **Square Root Optimization:**  
+   - 📄 [Wikipedia – Trial Division](https://en.wikipedia.org/wiki/Trial_division)  
+
+---
+
+### **🔹 Hashing & SHA-256 Algorithm**
+9. **Kernighan & Ritchie: The C Programming Language (Hashing Explanation)**  
+   📄 [Wikipedia – K&R Book](https://en.wikipedia.org/wiki/The_C_Programming_Language)  
+
+10. **Why Does Java’s `hashCode` in `String` Use `31` as a Multiplier?**  
+    📄 [GeeksforGeeks – Java Hashing](https://www.geeksforgeeks.org/why-does-javas-hashcode-in-string-use-31-as-a-multiplier/)  
+
 11. **SHA-256 Initial Constants Explanation**  
-   📄 [https://crypto.stackexchange.com/questions/19325](https://crypto.stackexchange.com/questions/19325)  
+    📄 [Crypto StackExchange](https://crypto.stackexchange.com/questions/19325)  
 
 12. **GeeksforGeeks - SHA-256 Algorithm**  
-   📄 [https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/](https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/)   
+    📄 [GeeksforGeeks – SHA-256](https://www.geeksforgeeks.org/secure-hash-algorithm-sha-256/)  
 
+---
+
+### **🔹 Proof of Work & Cryptography**
 13. **Bitcoin Whitepaper – Proof of Work in Blockchain**  
-   📄 [https://bitcoin.org/bitcoin.pdf](https://bitcoin.org/bitcoin.pdf)  
-   - Describes **how Proof of Work (PoW) is used in Bitcoin mining** to secure the blockchain.  
+    📄 [Bitcoin.org – Whitepaper](https://bitcoin.org/bitcoin.pdf)  
+    - Describes **how Proof of Work (PoW) is used in Bitcoin mining** to secure the blockchain.  
 
 14. **Cryptographic Hash Functions – Khan Academy**  
-   📄 [https://www.khanacademy.org/computing/computer-science/cryptography](https://www.khanacademy.org/computing/computer-science/cryptography)  
-   - Educational resource explaining **SHA-256 and hashing functions**.  
-15. **How Proof of Work Secures Cryptocurrencies – IBM Developer**  
-   📄 [https://developer.ibm.com/articles/what-is-proof-of-work/](https://developer.ibm.com/articles/what-is-proof-of-work/)  
-   - Explains **how Proof of Work is used in cryptocurrencies** and its **importance in security**.  
+    📄 [Khan Academy – Cryptography](https://www.khanacademy.org/computing/computer-science/cryptography)  
+    - Educational resource explaining **SHA-256 and hashing functions**.  
 
+15. **How Proof of Work Secures Cryptocurrencies – IBM Developer**  
+    📄 [IBM Developer – PoW](https://developer.ibm.com/articles/what-is-proof-of-work/)  
+    - Explains **how Proof of Work is used in cryptocurrencies** and its **importance in security**.  
+
+---
+
+### **🔹 AI Assistance**
+16. **ChatGPT by OpenAI – Assistance with Computational Theory Tasks**  
+    📄 [OpenAI – ChatGPT](https://openai.com/chatgpt)  
+    - ChatGPT was used for **guidance in understanding task requirements, structuring the README, improving technical explanations, and refining Python implementations** for various computational theory problems.  
+
+17. **Claude by Anthropic – Additional AI Support**  
+    📄 [Anthropic – Claude](https://www.anthropic.com)  
+    - Claude was used for **providing insights into cryptographic concepts, alternative approaches, and Proof-of-Work validation methods**.  
 
 
 ---
