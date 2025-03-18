@@ -14,8 +14,7 @@
 11. [Task 7: Turing Machine](#task-7-turing-machine)
 12. [Task 8: Computational Complexity](#-task-8-computational-complexity)
 13. [Testing](#testing--validation)
-14. [Final Thoughts & Challenges](#-final-thoughts--challenges)
-15. [References](#-references)
+14. [References](#-references)
 
 ---
 
