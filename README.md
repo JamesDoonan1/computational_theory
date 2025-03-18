@@ -13,7 +13,7 @@
 10. [Task 6: Proof of Work](#-task-6-proof-of-work)
 11. [Task 7: Turing Machine](#-task-7-turing-machine)
 12. [Task 8: Computational Complexity](#-task-8-computational-complexity)
-13. [Testing](#-Testing-&-Validation)
+13. [Testing](#-Testing)
 14. [Final Thoughts & Challenges](#-final-thoughts--challenges)
 15. [References](#-references)
 
@@ -463,7 +463,7 @@ Word: nonexistentword, Exists in Dictionary: False
 
 ---
 
-# 🛠 Task 7: Turing Machine – Incrementing a Binary Number    
+# 🛠 Task 7: Turing Machine   
 
 ## 📌 Problem Statement  
 This task focuses on **constructing a Turing Machine that increments a binary number by 1** on its tape.  
