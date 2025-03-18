@@ -550,6 +550,89 @@ For **binary addition**, the rules are:
 - **It correctly handles binary addition with carry propagation.**  
 - **Further enhancements could include state visualization and extending the Turing Machine for full binary arithmetic.**  
 
+---
+
+# 🛠 Task 8: Computational Complexity  
+
+## 📌 Problem Statement  
+This task investigates the **computational complexity** of **Bubble Sort**, a simple but inefficient sorting algorithm.  
+To analyse **sorting efficiency**, Bubble Sort is applied to **all permutations of `[1,2,3,4,5]`**, while counting the **number of comparisons required** to sort each permutation.  
+
+The goal is to:  
+1. **Implement Bubble Sort** with a **comparison counter**.  
+2. **Apply Bubble Sort to every permutation** of `[1,2,3,4,5]`.  
+3. **Record the number of comparisons required for each permutation**.  
+4. **Identify best-case, worst-case, and average-case performance**.  
+
+This experiment demonstrates how input order **affects sorting complexity**, reinforcing the importance of choosing efficient algorithms for larger datasets.  
+
+---
+
+## 🔬 Research & Explanation  
+### **🔹 What is Bubble Sort?**  
+Bubble Sort is a **comparison-based sorting algorithm** that repeatedly **swaps adjacent elements** until the list is sorted.  
+- **Best-case scenario**: The list is **already sorted**, requiring minimal comparisons.  
+- **Worst-case scenario**: The list is **reverse sorted**, requiring maximum comparisons.  
+- **Average-case scenario**: The list is randomly shuffled, requiring varying comparisons.  
+
+### **🔹 Why Count Comparisons Instead of Swaps?**  
+- **Comparisons** reflect the **computational complexity** of sorting.  
+- **Swaps depend on implementation**, but comparisons provide a **consistent metric** for evaluating efficiency.  
+
+### **🔹 Expected Bubble Sort Complexity**  
+| **Case**        | **Number of Comparisons** | **Time Complexity** |
+|----------------|------------------------|--------------------|
+| **Best Case** (Already Sorted) | **4** | **O(n)** |
+| **Worst Case** (Reverse Sorted) | **10** | **O(n²)** |
+| **Average Case** (Random Order) | **~9.26** | **O(n²)** |
+
+---
+
+## 📜 Implementation  
+### ✅ Steps to Implement the Task  
+1️⃣ **Generate all permutations** of `[1,2,3,4,5]`.  
+2️⃣ **Implement Bubble Sort** with a **comparison counter**.  
+3️⃣ **Apply Bubble Sort to each permutation** and record the **number of comparisons**.  
+4️⃣ **Summarise results**, identifying best, worst, and average cases.  
+
+---
+
+## 📝 Alternative Approaches  
+
+| **Sorting Algorithm** | **Time Complexity** | **Best Used For** | **Pros** | **Cons** |
+|----------------------|-------------------|----------------|---------|---------|
+| **Bubble Sort (Used Here)** | \(O(n^2)\) | Small lists, educational purposes | Simple, easy to implement | Very slow for large inputs |
+| **Insertion Sort** | \(O(n^2)\) | Partially sorted lists | Efficient for small or nearly sorted lists | Slow for large inputs |
+| **Merge Sort** | \(O(n \log n)\) | Large datasets, stable sorting | Always efficient, stable | Requires additional space |
+| **Quick Sort** | \(O(n \log n)\) | Large datasets, quick sorting | Very fast, works well in practice | Worst-case is \(O(n^2)\) |
+
+✅ **Conclusion:**  
+Bubble Sort is useful for **understanding sorting complexity**, but **inefficient for large datasets**.  
+This experiment highlights why more advanced sorting algorithms (e.g., **Merge Sort**, **Quick Sort**) are preferable for practical applications.  
+
+---
+
+## 🔎 Testing & Validation  
+
+### ✅ Expected Output Format  
+
+| **Permutation** | **Comparisons Required** |
+|---------------|-------------------|
+| `[1, 2, 3, 4, 5]` | **4** (Best case) |
+| `[5, 4, 3, 2, 1]` | **10** (Worst case) |
+| `[1, 2, 3, 5, 4]` | **7** |
+| `[1, 2, 4, 3, 5]` | **7** |
+| `[1, 2, 4, 5, 3]` | **9** |
+| `[1, 2, 5, 3, 4]` | **7** |
+
+
+✅ **Final Thoughts:**  
+- **Bubble Sort correctly demonstrated best, worst, and average-case complexities.**  
+- **Results confirm why Bubble Sort is impractical for large datasets.**  
+- **Future work could involve comparing Bubble Sort with Merge Sort or Quick Sort for a deeper analysis.**  
+
+---
+
 # 📚 References  
 
 ### **🔹 Cryptographic Standards & Documentation**
