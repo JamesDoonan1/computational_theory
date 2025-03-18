@@ -463,6 +463,24 @@ Word: nonexistentword, Exists in Dictionary: False
 
 ---
 
+# 🛠 Task 7: Turing Machine – Incrementing a Binary Number    
+
+## 📌 Problem Statement  
+This task focuses on **constructing a Turing Machine that increments a binary number by 1** on its tape.  
+The machine follows these operational steps:  
+
+- **Begins at the left-most non-blank symbol**.  
+- **Traverses to the right-most bit (least significant bit - LSB)**.  
+- **Performs binary addition**, applying the following rules:  
+  - `0` → `1` (stops here, as no carry is needed).  
+  - `1` → `0` (carry continues to the left).  
+- **Accounts for cases where all bits are `1`**, ensuring proper carry propagation (e.g., `111 → 1000`).  
+- **Outputs the updated binary number on the tape**.  
+
+Turing Machines play a crucial role in **Computational Theory**, showcasing how **simple state-based rules** can achieve complex computations.  
+This task specifically highlights **basic arithmetic operations within automata theory** and demonstrates how binary addition can be **modeled using a stepwise approach**.
+
+
 # 📚 References  
 
 ### **🔹 Cryptographic Standards & Documentation**
