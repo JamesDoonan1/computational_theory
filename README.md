@@ -13,7 +13,7 @@
 10. [Task 6: Proof of Work](#-task-6-proof-of-work)
 11. [Task 7: Turing Machine](#-task-7-turing-machine)
 12. [Task 8: Computational Complexity](#-task-8-computational-complexity)
-13. [Testing](#-testing)
+13. [Testing](#-Testing-&-Validation)
 14. [Final Thoughts & Challenges](#-final-thoughts--challenges)
 15. [References](#-references)
 
@@ -632,6 +632,51 @@ This experiment highlights why more advanced sorting algorithms (e.g., **Merge S
 - **Future work could involve comparing Bubble Sort with Merge Sort or Quick Sort for a deeper analysis.**  
 
 ---
+
+---
+
+# 🛠 Testing & Validation  
+
+## 📌 Overview  
+This project includes **automated unit tests** to validate the correctness of all implemented functions.  
+The tests ensure that each task follows the **Computational Theory specifications** and produces the expected results.  
+
+The test suite was executed using **Python’s `unittest` framework**, covering edge cases, expected outputs, and computational correctness.  
+
+---
+
+## ✅ **Test Cases & Coverage**  
+The following test cases were executed to verify each task:  
+
+| **Test Name**                           | **Description**                                       | **Status**  |
+|------------------------------------------|-------------------------------------------------------|-------------|
+| `test_rotl`                              | Verifies correct bitwise left rotation (`rotl`)       | ✅ Passed   |
+| `test_rotr`                              | Verifies correct bitwise right rotation (`rotr`)      | ✅ Passed   |
+| `test_ch`                                | Ensures `ch(x, y, z)` correctly selects bits          | ✅ Passed   |
+| `test_maj`                               | Ensures `maj(x, y, z)` correctly performs majority    | ✅ Passed   |
+| `test_kr_hash`                           | Validates conversion of the K&R hash function        | ✅ Passed   |
+| `test_sha256_padding`                    | Checks SHA-256 padding for correct formatting        | ✅ Passed   |
+| `test_sha256_leading_zeros`              | Ensures correct counting of leading zero bits        | ✅ Passed   |
+| `test_is_valid_word`                     | Confirms dictionary lookup for Proof-of-Work words   | ✅ Passed   |
+| `test_isprime_sqrt`                      | Validates prime number detection using √n method     | ✅ Passed   |
+| `test_first_n_primes`                    | Checks generation of the first `n` prime numbers     | ✅ Passed   |
+| `test_fractional_root_bits`              | Validates SHA-256 root bit extraction method         | ✅ Passed   |
+| `test_turing_machine_add_one`            | Ensures correct binary increment using a Turing Machine | ✅ Passed   |
+| `test_bubble_sort_count_comparisons`     | Validates Bubble Sort comparison counting            | ✅ Passed   |
+
+---
+
+## 📊 **Test Execution Results**  
+- **Total Tests Run:** `13`  
+- **Total Tests Passed:** `13`  
+- **Total Failures:** `0` 🎯  
+
+All functions have been **successfully tested and validated** against expected outputs.  
+The implementation aligns with **Computational Theory requirements**, confirming correctness and reliability.  
+
+---
+
+
 
 # 📚 References  
 
