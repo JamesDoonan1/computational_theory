@@ -702,14 +702,36 @@ This experiment highlights why more advanced sorting algorithms (e.g., **Merge S
 
 ---
 
+### **🔹 Computational Complexity & Sorting**
+16. **Time and Space Complexity Analysis of Bubble Sort**  
+    📄 [GeeksforGeeks – Bubble Sort Complexity](https://www.geeksforgeeks.org/time-and-space-complexity-analysis-of-bubble-sort/)  
+    - Provides a detailed analysis of Bubble Sort’s best, worst, and average-case time complexity.  
+
+17. **Bubble Sort Time Complexity and Algorithm Explained**  
+    📄 [BuiltIn – Bubble Sort](https://builtin.com/data-science/bubble-sort-time-complexity)  
+    - Covers the working of Bubble Sort and its complexity analysis.  
+
+18. **Computing Bubble Sort Time Complexity**  
+    📄 [Baeldung – Bubble Sort](https://www.baeldung.com/cs/bubble-sort-time-complexity)  
+    - Breaks down the mathematical proof of Bubble Sort’s complexity.  
+
+19. **Sorting Algorithm Complexity**  
+    📄 [Wikipedia – Sorting Algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm)  
+    - Overview of various sorting algorithms, including complexity comparisons.  
+
+20. **Best, Worst, and Average Case Complexity**  
+    📄 [Wikipedia – Complexity Analysis](https://en.wikipedia.org/wiki/Best%2C_worst_and_average_case)  
+    - Explains the standard approach to analyzing algorithm complexity under different conditions.  
+
+---
+
 ### **🔹 AI Assistance**
-16. **ChatGPT by OpenAI – Assistance with Computational Theory Tasks**  
+21. **ChatGPT by OpenAI – Assistance with Computational Theory Tasks**  
     📄 [OpenAI – ChatGPT](https://openai.com/chatgpt)  
     - ChatGPT was used for **guidance in understanding task requirements, structuring the README, improving technical explanations, and refining Python implementations** for various computational theory problems.  
 
-17. **Claude by Anthropic – Additional AI Support**  
+22. **Claude by Anthropic – Additional AI Support**  
     📄 [Anthropic – Claude](https://www.anthropic.com)  
     - Claude was used for **providing insights into cryptographic concepts, alternative approaches, and Proof-of-Work validation methods**.  
-
 
 ---
