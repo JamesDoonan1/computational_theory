@@ -11,7 +11,7 @@
 8. [Task 4: Prime Numbers](#-task-4-prime-numbers)
 9. [Task 5: Roots](#-task-5-roots)
 10. [Task 6: Proof of Work](#-task-6-proof-of-work)
-11. [Task 7: Turing Machine](#-task-7-turing-machine)
+11. [Task 7: Turing Machine](#task-7-turing-machine)
 12. [Task 8: Computational Complexity](#-task-8-computational-complexity)
 13. [Testing](#-Testing)
 14. [Final Thoughts & Challenges](#-final-thoughts--challenges)
