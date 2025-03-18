@@ -173,3 +173,4 @@ cython_debug/
 # leave sample.txt out og github
 sample.txt
 test.txt
+test_padding.txt
