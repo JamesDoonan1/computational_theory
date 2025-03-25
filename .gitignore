@@ -174,3 +174,4 @@ cython_debug/
 sample.txt
 test.txt
 test_padding.txt
+dictionary.txt
