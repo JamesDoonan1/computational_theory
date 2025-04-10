@@ -49,7 +49,43 @@ To set up this project on your local machine:
 4. **Open Jupyter Notebook**  
     jupyter notebook task.ipynb
 
+--- 
+
+## ▶️ Usage
+
+Open the `tasks.ipynb` notebook and run each cell sequentially. The notebook contains:
+
+- 📘 Explanations and research per task  
+- 🧠 Python implementations  
+- ✅ Testing and validation output  
+- 📊 Results and final thoughts  
+
+All code is self-contained and can be executed in order from top to bottom.
+
 ---
+
+## 📦 Dependencies
+
+This project uses the following Python libraries:
+
+- `os` – for file handling and file path management  
+- `struct` – for binary formatting (used in SHA256 padding)  
+- `random` – for generating random choices in trigram text generation  
+- `numpy` – for numerical operations and array handling  
+- `hashlib` – for computing SHA-256 hashes  
+- `itertools` – for generating permutations in Task 8  
+- `unittest` – for automated testing across all tasks  
+- `matplotlib.pyplot` – for plotting (optional visualisations)  
+- `math` – for prime checking and root calculations  
+- `seaborn` – for enhanced plotting and heatmaps  
+- `collections.Counter` – for efficient frequency counting in NLP tasks  
+
+Install them with:
+
+```bash
+pip install -r requirements.txt
+
+
 
 # 🛠 Task 1: Binary Representations  
 
