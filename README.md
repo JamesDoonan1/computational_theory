@@ -51,7 +51,7 @@ To set up this project on your local machine:
 
 --- 
 
-## ▶️ Usage
+## Usage
 
 Open the `tasks.ipynb` notebook and run each cell sequentially. The notebook contains:
 
