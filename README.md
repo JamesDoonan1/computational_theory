@@ -80,12 +80,12 @@ This project uses the following Python libraries:
 - `seaborn` – for enhanced plotting and heatmaps  
 - `collections.Counter` – for efficient frequency counting in NLP tasks  
 
-Install them with:
+You can install them (if not already available) using:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt  
 
-
+```  
 
 # 🛠 Task 1: Binary Representations  
 
