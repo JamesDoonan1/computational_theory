@@ -434,7 +434,7 @@ To verify that the identified words are valid English words, I manually checked 
 | Approach | Description | Pros | Cons |
 |----------|------------|------|------|
 | **Brute Force Approach** | Randomly generates words to find optimal hashes. | Finds ideal words. | Extremely slow, computationally expensive. |
-| **Using NLTK Word List (Used Here)** | Searches through an actual dictionary dataset. | Faster, works with real words. | May miss non-dictionary words with better hashes. |
+| **Using NLTK Word List** | Searches through an actual dictionary dataset. | Faster, works with real words. | May miss non-dictionary words with better hashes. |
 | **Custom Word List** | Uses a predefined list of common words. | More control over word selection. | Limited dataset, may not find optimal hashes. |
 
 
