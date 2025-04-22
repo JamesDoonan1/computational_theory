@@ -330,7 +330,7 @@ Calculate the first 100 prime numbers using two different algorithms. Explain ho
 | **Algorithm**               | **Input**   | **Expected Output**    | **Actual Output**     | **Status**      |  
 |-----------------------------|------------|-----------------------|-----------------------|----------------|  
 | **Miller-Rabin**            | `n = 100`  | First 100 primes      | First 100 primes      | ✅ Correct     |  
-| **Square Root Optimization** | `n = 100`  | First 100 primes      | First 100 primes      | ✅ Correct     |  
+| **Square Root Optimisation** | `n = 100`  | First 100 primes      | First 100 primes      | ✅ Correct     |  
 
 
 ```
@@ -353,7 +353,7 @@ Despite not being the most common choice for sequential prime generation, my imp
 
 ## 🔹 Square Roots in Cryptography  
 
-In cryptographic hash functions such as **SHA-256**, **initialization constants** are derived from the **fractional parts of the square roots** of the **first 8 prime numbers**. These values introduce non-linearity, which enhances **security and randomness** in hashing.
+In cryptographic hash functions such as **SHA-256**, **initialisation constants** are derived from the **fractional parts of the square roots** of the **first 8 prime numbers**. These values introduce non-linearity, which enhances **security and randomness** in hashing.
 
 This task extends that concept by computing **the first 32 bits of the fractional part of the square roots of the first 100 prime numbers**.
 
@@ -376,8 +376,8 @@ Write a Python function that:
 
 | Approach | Description | Pros | Cons |
 |----------|------------|------|------|
-| **Manual Prime Computation** | Calculates primes within this task. | Independent, self-contained. | Redundant, less optimized. |
-| **Reusing `first_n_primes(n)` (Used Here)** | Uses the optimized function from Task 4. | Efficient, avoids duplicate code. | Requires importing from Task 4. |
+| **Manual Prime Computation** | Calculates primes within this task. | Independent, self-contained. | Redundant, less optimised. |
+| **Reusing `first_n_primes(n)` (Used Here)** | Uses the optimised function from Task 4. | Efficient, avoids duplicate code. | Requires importing from Task 4. |
 | **Precomputed Prime List** | Stores a hardcoded list of primes. | Fastest execution. | No flexibility, storage overhead. |
 
 ✅ **Conclusion:** **Reusing Task 4’s function** is the **best approach** as it **avoids redundancy while maintaining efficiency**.
@@ -589,7 +589,7 @@ For **binary addition**, the rules are:
 
 - **This Turing Machine implementation successfully increments binary numbers using fundamental state-based logic.**  
 - **It correctly handles binary addition with carry propagation.**  
-- **Further enhancements could include state visualization and extending the Turing Machine for full binary arithmetic.**  
+- **Further enhancements could include state visualisation and extending the Turing Machine for full binary arithmetic.**  
 
 ---
 
@@ -737,10 +737,10 @@ The implementation aligns with **Computational Theory requirements**, confirming
 
 ---
 
-### **🔹 Computational Theory & Optimization**
+### **🔹 Computational Theory & Optimisation**
 4. **Efficient Bitwise Computations (Intel Developer Zone)**  
    📄 [Intel – Fast Bitwise Operations](https://software.intel.com/en-us/articles/fast-bitwise-operations)  
-   - Discusses performance-optimized bitwise operations.  
+   - Discusses performance-optimised bitwise operations.  
 
 5. **Understanding Binary Arithmetic (MIT OpenCourseWare)**  
    📄 [MIT OpenCourseWare](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-004-computation-structures-fall-2017/)  
@@ -754,7 +754,7 @@ The implementation aligns with **Computational Theory requirements**, confirming
    - 📄 [Wikipedia – Miller-Rabin Primality Test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)  
    - 📄 [Efficient Primality Testing – GeeksforGeeks](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)  
 
-8. **Square Root Optimization:**  
+8. **Square Root Optimisation:**  
    - 📄 [Wikipedia – Trial Division](https://en.wikipedia.org/wiki/Trial_division)  
 
 ---
