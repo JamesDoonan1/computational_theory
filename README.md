@@ -3,7 +3,7 @@
 ## 📖 Table of Contents
 1. [Overview](#-overview)
 2. [Installation](#-installation)
-3. [Usage](#-usage)
+3. [Usage](#usage)
 4. [Dependencies](#-dependencies)
 5. [Task 1: Binary Representations](#-task-1-binary-representations)
 6. [Task 2: Hash Functions](#-task-2-hash-functions)
