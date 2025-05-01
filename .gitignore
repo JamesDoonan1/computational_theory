@@ -175,3 +175,6 @@ sample.txt
 test.txt
 test_padding.txt
 dictionary.txt
+# Test output files
+empty_test.txt
+edge_test.txt
