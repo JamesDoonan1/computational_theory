@@ -233,9 +233,9 @@ Final Step:  `99162353 % 101 = 17`
 ## 📌 Research  
 
 ### 🔹 What is SHA-256 Padding?  
-SHA-256 is a **cryptographic hash function** that processes input data in **512-bit blocks**. If the input message is not already a multiple of 512 buts, **padding is added** to ensure the final message fits the required block size.  
+SHA-256 is a **cryptographic hash function** that processes input data in **512-bit blocks**. If the input message is not already a multiple of 512 bits, **padding is added** to ensure the final message fits the required block size.  
 
-Sha-256 padding consists of 3 main steps:  
+SHA-256 padding consists of 3 main steps:  
 1. **Append a `1 bit`** (0x80 in hex).
 2. **Pad with `0` bits** until the length is congruent to **448 mod 512**.
 3. **Append the original message length** as a **64-bit big-endian integer**.  
@@ -293,8 +293,8 @@ Calculate the first 100 prime numbers using two different algorithms. Explain ho
 ## 📌 Research  
 
 ### 🔹   Miller-Rabin Primality Test vs. with Square Root Optimisation – Brief Explanation  
-- The **Miller-Rabin primality test** is a probabilistic algorithm. It's method uses modular exponentiation and Fermat’s Little Theorem to test if a number behaves like a prime. it's efficiency is much faster for large numbers. It's used in cryptography(e.g RSA key generation). It's accuracy is not 100% guaranteed, but highly reliable with multiple tests.  
-- The **Trial Division with Square Root Optimisation** is a deterministic algorithm. It's method checks divisibility only up to √n since a composite number must have a factor ≤ √n. It's efficiency is slower for larger numbers, nut **always** correct.    
+- The **Miller-Rabin primality test** is a probabilistic algorithm. Its method uses modular exponentiation and Fermat’s Little Theorem to test if a number behaves like a prime. its efficiency is much faster for large numbers. It's used in cryptography(e.g RSA key generation). Its accuracy is not 100% guaranteed, but highly reliable with multiple tests.  
+- The **Trial Division with Square Root Optimisation** is a deterministic algorithm. Its method checks divisibility only up to √n since a composite number must have a factor ≤ √n. Its efficiency is slower for larger numbers, but **always** correct.    
 
 ### 🔹  Implementation
 
@@ -304,9 +304,11 @@ Calculate the first 100 prime numbers using two different algorithms. Explain ho
 | **2. Trial Division** | Deterministic | O(√n) | Small numbers (≤ 10⁹) | 	✅ (Always correct) | 
 
 
-📌 **Sources:**
-- 📄 [NIST Secure Hash Standard (FIPS 180-4)](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf)
-- 📄 [SHA-256 Explained (Cryptography StackExchange)](https://crypto.stackexchange.com/questions/48636/sha-256-padding-explanation)
+📌 **Source:**
+- 📄 [Miller-Rabin Primality Test (Wikipedia)](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test)
+- 📄 [Efficient Primality Testing (GeeksforGeeks)](https://www.geeksforgeeks.org/primality-test-set-3-miller-rabin/)
+- 📄 [Trial Division (Wikipedia)](https://en.wikipedia.org/wiki/Trial_division)
+
 
 ---
 
@@ -438,7 +440,7 @@ The function correctly computes **the first 32 bits of the fractional part of sq
 ## 📌 Problem Statement  
 This task involves **finding English words whose SHA-256 hash digests contain the highest number of leading `0` bits**.  
 
-The challenge is similar to **Proof-of-Work (PoW) mechanisms** used in **blockchain mining**, where miners compete to find a hash value with a certain number of leading zeros. However, rather than generating hashes by brute force, I am analyzing **real English words** to find those that naturally produce hashes with the most leading zeros.  
+The challenge is similar to **Proof-of-Work (PoW) mechanisms** used in **blockchain mining**, where miners compete to find a hash value with a certain number of leading zeros. However, rather than generating hashes by brute force, I am analysing **real English words** to find those that naturally produce hashes with the most leading zeros.  
 
 ## 📌 Research & Explanation  
 ### 🔹 What is Proof of Work?  
@@ -499,7 +501,7 @@ For the implementation, words were loaded from a curated dictionary file contain
 
 -   The function successfullly identified English words with the highest number of leading zero bits in their SHA-256 hashes.  
 -  **Dictionary validation** ensures that I'm using **real words rather than random letter sequences**.  
--  This method could be extended to search for words with even more leading zeros by using a larger dataset or even AI_generated words.
+-  This method could be extended to search for words with even more leading zeros by using a larger dataset or even AI-generated words.
 
 
 ---
@@ -510,13 +512,12 @@ For the implementation, words were loaded from a curated dictionary file contain
 This task focuses on **constructing a Turing Machine that increments a binary number by 1** on its tape.  
 The machine follows these operational steps:  
 
-- **Begins at the left-most non-blank symbol**.  
-- **Traverses to the right-most bit (least significant bit - LSB)**.  
-- **Performs binary addition**, applying the following rules:  
-  - `0` → `1` (stops here, as no carry is needed).  
-  - `1` → `0` (carry continues to the left).  
-- **Accounts for cases where all bits are `1`**, ensuring proper carry propagation (e.g., `111 → 1000`).  
-- **Outputs the updated binary number on the tape**.  
+- **Begins at the right-most bit (least significant bit - LSB)**.
+- **Performs binary addition**, applying the following rules:
+  - `0` → `1` (stops here, as no carry is needed).
+  - `1` → `0` (carry continues to the left).
+- **Accounts for cases where all bits are `1`**, ensuring proper carry propagation (e.g., `111 → 1000`).
+- **Outputs the updated binary number on the tape**.
 
 Turing Machines play a crucial role in **Computational Theory**, showcasing how **simple state-based rules** can achieve complex computations.  
 This task specifically highlights **basic arithmetic operations within automata theory** and demonstrates how binary addition can be **modeled using a stepwise approach**.
